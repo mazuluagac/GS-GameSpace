@@ -62,7 +62,7 @@ Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/juego', [JuegoController::class, 'index'])->name('juego');
 Route::get('/games/download-excel', [GamesControllers::class,'generarExcel'])->name('games.descargar-excel');
 Route::get('/games/download-pdf',[GamesController::class,'generarPDF'])->name('games.descargar-pdf');
-Route::get('/search/search', [GameController::class,'search'])->name('search.search');
+Route::get('/search', [GamesController::class,'search'])->name('search.search');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);

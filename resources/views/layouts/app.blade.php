@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html>
-    
+<html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>GAME SPACE | Descarga juegos para PC</title>
-    
     <link rel="icon" type="" href="assets/iconos/palanca-de-mando.png" />
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="{{ asset('styles.css') }}">
@@ -19,34 +19,51 @@
 <body style="background-image: url('assets/fondoGame.png');">
     <header>
         <!-- Aquí puedes colocar la barra de navegación u otros elementos de cabecera -->
-        <nav class="navbar navbar-expand-md navbar-light bg-white shadow-sm">
+        <nav class="navbar navbar-expand-md shadow-sm" id="mainNav">
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
-                    {{ config('app.name', 'Laravel') }}
+                    <!-- {{ config('app.name', 'Laravel') }} -->
+                    <img src="assets/logo game space/2.png" alt="Logo" width="50" height="50" class="...">
+                    GAME SPACE</a>
                 </a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="{{ route('home')}}">Inicio</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#juegosNS">Juegos Switch</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ route('games.index') }}">Listado Juegos</a>
+                    </li>
+                </ul>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav me-auto">
-
+                        
                     </ul>
 
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ms-auto">
+                        <form action="{{ route('search.search') }}" class="d-flex" role="search" method="GET">
+                            <input class="form-control me-2" type="search" placeholder="Buscar juego" aria-label="search">
+                            <button class="btn btn-outline-primary" type="submit">Buscar</button>
+                        </form>
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Login') }}</a>
+                                    <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
-                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Register') }}</a>
+                                    <a class="nav-link" href="{{ route('register') }}">{{ __('Crear Cuenta') }}</a>
                                 </li>
                             @endif
                         @else
