@@ -52,4 +52,5 @@ class User extends Authenticatable
         // se encarga de verificar si el usuario tiene el rol que se le pasa por parametro
         return $this->role->nombre === $role;
     }
+
 }
