@@ -1,9 +1,11 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container" id="cont-principal">
     <h1 class="mb-4" style="color: white;">Listado de Juegos</h1>
-    <a href="{{ route('games.create') }}" class="btn btn-primary mb-3">Agregar Juego</a>
+    
+        <a href="{{ route('games.create') }}" class="btn btn-primary mb-3">Agregar Juego</a>
+    
 
     <!-- Botones para generación de reportes -->
     <div class="mb-3">

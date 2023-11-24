@@ -44,7 +44,7 @@ Route::middleware(['auth', 'role:moderador'])->group(function () {
     Route::get('/mod', function () {
         return view('mod');
     });
-    Route::post('/games',[GamesControllers::class,'store'])->name('games.store');
+    Route::post('/games/store',[GamesControllers::class,'store'])->name('games.store');
     Route::put('/games/{id}',[GamesControllers::class,'update'])->name('games.update');
     Route::delete('/games/{id}',[GamesControllers::class,'destroy'])->name('games.destroy');
     Route::put('/games/{id}',[GamesControllers::class,'update'])->name('games.update');

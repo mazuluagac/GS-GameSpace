@@ -3,10 +3,9 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GAME SPACE | Descarga juegos para PC</title>
+    <title>GAME SPACE | Juegos para PC</title>
     <link rel="icon" type="" href="assets/iconos/palanca-de-mando.png" />
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="{{ asset('styles.css') }}">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="{{ asset('js/bootstrap.bundle.min.js') }}"></script>
@@ -35,7 +34,9 @@
                         <a class="nav-link active" aria-current="page" href="{{ route('home')}}">Inicio</a>
                     </li>
                     <li class="nav-item">
+                    @if (!request()->routeIs('games.index'))
                         <a class="nav-link" href="#juegosNS">Juegos Switch</a>
+                    @endif
                     </li>
                     <li class="nav-item">
                     
