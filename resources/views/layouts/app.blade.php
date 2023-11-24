@@ -29,6 +29,7 @@
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="{{ __('Toggle navigation') }}">
                     <span class="navbar-toggler-icon"></span>
                 </button>
+            @if (!request()->routeIs('login') && !request()->routeIs('register'))
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <li class="nav-item">
                         <a class="nav-link active" aria-current="page" href="{{ route('home')}}">Inicio</a>
@@ -37,8 +38,10 @@
                         <a class="nav-link" href="#juegosNS">Juegos Switch</a>
                     </li>
                     <li class="nav-item">
+                    
                         <a class="nav-link" href="{{ route('games.index') }}">Listado Juegos</a>
                     </li>
+                
                 </ul>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -53,6 +56,8 @@
                             <input class="form-control me-2" type="search" placeholder="Buscar juego" aria-label="search">
                             <button class="btn btn-outline-primary" type="submit">Buscar</button>
                         </form>
+            @endif
+                        
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
