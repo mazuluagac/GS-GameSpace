@@ -56,19 +56,23 @@
                             <input class="form-control me-2" type="search" placeholder="Buscar juego" aria-label="search">
                             <button class="btn btn-outline-primary" type="submit">Buscar</button>
                         </form>
-            @endif
+                @endif
                         
                         <!-- Authentication Links -->
                         @guest
                             @if (Route::has('login'))
                                 <li class="nav-item">
+                                @if (!request()->routeIs('login'))
                                     <a class="nav-link" href="{{ route('login') }}">{{ __('Iniciar Sesión') }}</a>
+                                @endif
                                 </li>
                             @endif
 
                             @if (Route::has('register'))
                                 <li class="nav-item">
+                                @if (!request()->routeIs('register'))
                                     <a class="nav-link" href="{{ route('register') }}">{{ __('Crear Cuenta') }}</a>
+                                @endif
                                 </li>
                             @endif
                         @else

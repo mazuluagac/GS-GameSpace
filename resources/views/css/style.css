@@ -10,6 +10,7 @@
     width: 85%;
     background-color: rgba(66, 66, 66, 0.7);
 }
+
 #mainNav{
     position: absolute;
     top: 0;
@@ -27,7 +28,7 @@
     color: #fff !important; /*Color del texto del elemento .navbar-brand en blanco */
 }
 
-#botonIniciarS{
+/* #botonIniciarS{
     border: 1px solid;
     color: #000;
     font-weight: 450;
@@ -40,7 +41,7 @@
     color: #000;
     font-weight: 600;
     padding: .25rem .5rem;
-}
+} */
 
 body {
     padding-top: 80px; /* Ajusta el valor según sea necesario para el espacio de la barra de navegación */
