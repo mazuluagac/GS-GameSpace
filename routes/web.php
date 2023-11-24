@@ -11,12 +11,12 @@ use App\Http\Controllers\Auth\RegisterController;
 
 
 //--------------- ADMINISTRADORES ---------------
-Route::middleware(['auth' , 'role:administrador'])->group(function () {
+Route::middleware(['auth' , 'role:administrador|moderador'])->group(function () {
     // esta ruta solo la puede ver el administrador
     // puede ser un controlador o una vista
-    Route::get('/admin', function () {
-        return view('admin');
-    });
+    // Route::get('/admin', function () {|
+    //     return view('admin');
+    // });
     Route::get('/games',[GamesControllers::class,'index'])->name('games.index');
     Route::post('/games/store',[GamesControllers::class,'store'])->name('games.store');
     Route::delete('/games/{id}',[GamesControllers::class,'destroy'])->name('games.destroy');
@@ -32,8 +32,8 @@ Route::middleware(['auth' , 'role:administrador'])->group(function () {
     Route::get('/users/{user}/edit', [UserController::class, 'edit'])->name('users.edit');
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
-    Route::get('/users/download-excel', [GControllers::class,'generarExcel'])->name('users.descargar-excel');
-    Route::get('/users/download-pdf',[GamesController::class,'generarPDF'])->name('users.descargar-pdf');
+    Route::get('/users/download-excel', [GamesControllers::class,'generarExcel'])->name('users.descargar-excel');
+    Route::get('/users/download-pdf',[GamesControllers::class,'generarPDF'])->name('users.descargar-pdf');
     
 });
 
@@ -41,15 +41,15 @@ Route::middleware(['auth' , 'role:administrador'])->group(function () {
 Route::middleware(['auth', 'role:moderador'])->group(function () {
     // esta ruta solo la puede ver el moderador
     // puede ser un controlador o una vista
-    Route::get('/mod', function () {
-        return view('mod');
-    });
-    Route::post('/games/store',[GamesControllers::class,'store'])->name('games.store');
-    Route::put('/games/{id}',[GamesControllers::class,'update'])->name('games.update');
-    Route::delete('/games/{id}',[GamesControllers::class,'destroy'])->name('games.destroy');
-    Route::put('/games/{id}',[GamesControllers::class,'update'])->name('games.update');
-    Route::get('/games/create', [GamesControllers::class, 'create'])->name('games.create');
-    Route::get('/games/{id}',[GamesControllers::class,'edit'])->name('games.edit');
+    // Route::get('/mod', function () {
+    //     return view('mod');
+    // });
+    // Route::post('/games/store',[GamesControllers::class,'store'])->name('games.store');
+    // Route::put('/games/{id}',[GamesControllers::class,'update'])->name('games.update');
+    // Route::delete('/games/{id}',[GamesControllers::class,'destroy'])->name('games.destroy');
+    // Route::put('/games/{id}',[GamesControllers::class,'update'])->name('games.update');
+    // Route::get('/games/create', [GamesControllers::class, 'create'])->name('games.create');
+    // Route::get('/games/{id}',[GamesControllers::class,'edit'])->name('games.edit');
 
 });
 
