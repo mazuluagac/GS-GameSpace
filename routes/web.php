@@ -33,7 +33,7 @@ Route::middleware(['auth' , 'role:administrador|moderador'])->group(function () 
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
     Route::get('/users/download-excel', [GamesControllers::class,'generarExcel'])->name('users.descargar-excel');
-    Route::get('/users/download-pdf',[GamesControllers::class,'generarPDF'])->name('users.descargar-pdf');
+    Route::get('/users/download-pdf',[GamesControllersz::class,'generarPDF'])->name('users.descargar-pdf');
     
 });
 
