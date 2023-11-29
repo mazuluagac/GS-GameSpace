@@ -9,7 +9,7 @@
 
     <!-- Botones para generación de reportes -->
     <div class="mb-3">
-        <a href="{{route('games.descargar-excel')}}" class="btn btn-success">Exportar a Excel</a>
+        <a href="{{route('api')}}" class="btn btn-success">Api Externa</a>
         <a href="{{route('games.descargar-pdf')}}" class="btn btn-danger">Generar PDF</a>
     </div>
 
