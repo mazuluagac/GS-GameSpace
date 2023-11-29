@@ -33,7 +33,7 @@ Route::middleware(['auth' , 'role:administrador|moderador'])->group(function () 
     Route::put('/users/{user}', [UserController::class, 'update'])->name('users.update');
     Route::delete('/users/{user}', [UserController::class, 'destroy'])->name('users.destroy');
     Route::get('/users/download-excel', [GamesControllers::class,'generarExcel'])->name('users.descargar-excel');
-    Route::get('/users/download-pdf',[GamesControllersz::class,'generarPDF'])->name('users.descargar-pdf');
+    Route::get('/users/download-pdf',[GamesControllers::class,'generarPDF'])->name('users.descargar-pdf');
     
 });
 
@@ -61,8 +61,8 @@ Route::get('/', function () {
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/juego', [JuegoController::class, 'index'])->name('juego');
 Route::get('/games/download-excel', [GamesControllers::class,'generarExcel'])->name('games.descargar-excel');
-Route::get('/games/download-pdf',[GamesController::class,'generarPDF'])->name('games.descargar-pdf');
-Route::get('/search', [GamesController::class,'search'])->name('search.search');
+Route::get('/games/download-pdf',[GamesControllers::class,'generarPDF'])->name('games.descargar-pdf');
+Route::get('/search', [GamesControllers::class,'search'])->name('search.search');
 Route::get('/home', [HomeController::class, 'index'])->name('home');
 Route::get('/login', [LoginController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [LoginController::class, 'login']);
